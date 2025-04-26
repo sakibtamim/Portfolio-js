@@ -1,0 +1,2 @@
+font-family: "IBM Plex Serif", serif;
+font-family: "Inter", sans-serif;
