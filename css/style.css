@@ -56,7 +56,6 @@ nav {
 }
 .nav_menu ul li a.active {
   color: #f9fafb !important;
-  background-color: #efbf6e;
 }
 .nav_search {
   position: relative;
@@ -89,6 +88,58 @@ nav {
   -o-transform: translateY(-50%);
 }
 /* nav part end */
+
+/* back to top part start  */
+.backtotop {
+  height: 60px;
+  width: 60px;
+  background-color: #efbf6e;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 3;
+  display: none;
+  animation: scrollbtn 2s infinite;
+  -webkit-animation: scrollbtn 2s infinite;
+}
+@keyframes scrollbtn {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
+  50% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
+}
+.backtotop i {
+  height: 60px;
+  line-height: 60px;
+  font-size: 24px;
+  color: #34353a;
+}
+/* back to top part end  */
 
 /* banner part start   */
 #banner {
@@ -501,7 +552,7 @@ nav {
 /* contact part end  */
 
 /* footer part start  */
-footer {
+#footer {
   padding: 100px 0;
   background-color: #30333a;
 }
