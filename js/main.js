@@ -15,3 +15,29 @@ window.addEventListener("scroll", function () {
     back2top.style.display = "none";
   }
 });
+
+let type = document.querySelectorAll(".type");
+let typeArray = Array.from(type);
+typeArray.map((item) => {
+  let typeText = item.innerHTML;
+  let typeArr = typeText.split("");
+  item.innerHTML = "";
+  let typing = 0;
+
+  function typeJs() {
+    if (typing < typeText.length) {
+      item.innerHTML += typeText.charAt(typing);
+      typing++;
+      typeArr = typeText.split("");
+    } else {
+      typeArr.pop();
+      item.innerHTML = typeArr.join("");
+      if (typeArr.length == 0) {
+        typing = 0;
+      }
+    }
+  }
+  setInterval(() => {
+    typeJs();
+  }, 200);
+});
