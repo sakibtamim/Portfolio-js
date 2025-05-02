@@ -30,6 +30,20 @@ img {
 nav {
   background-color: #34353a;
 }
+.navbg {
+  background-color: #34353a;
+  box-shadow: 0 2px 8px 0 #ffc86b;
+  animation: navbgg 2s;
+  -webkit-animation: navbgg 2s;
+}
+@keyframes navbgg {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0;
+  }
+}
 .nav_logo a {
   font-size: 40px;
   font-weight: 800;
@@ -47,14 +61,20 @@ nav {
   font-size: 17px;
   font-weight: bold;
   color: #797a7d !important;
-  padding: 0px 20px !important;
+  padding: 16px 20px !important;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+  background: linear-gradient(#efbf6e 0 0) no-repeat calc(200% - var(--p, 0%))
+    100% / 200% var(--p, 0.08em);
+  transition: 0.3s var(--t, 0s),
+    background-position 0.3s calc(0.3s - var(--t, 0s));
 }
-.nav_menu ul li a.active {
+.nav_menu ul li a:hover {
+  --p: 100%;
+  --t: 0.3s;
   color: #f9fafb !important;
 }
 .nav_search {
@@ -259,7 +279,7 @@ nav {
   font-weight: 600;
   font-family: "IBM Plex Serif", serif;
   color: #f9f9f9;
-  padding-bottom: 24px;
+  padding-bottom: 36px;
 }
 .about_body .inner {
   padding: 60px 0;
@@ -288,21 +308,78 @@ nav {
 
 /* portfolio part start  */
 #portfolio {
-  padding-bottom: 100px;
+  padding: 100px 0;
+
   background-color: #30333a;
 }
-.portfolio_main h2 {
+.portfolio_head h2 {
   font-size: 36px;
   font-weight: 600;
   font-family: "IBM Plex Serif", serif;
   color: #f9f9f9;
-  padding-bottom: 24px;
+  padding-bottom: 36px;
+}
+.portfolio_main {
+}
+.portfolio_body {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  border-radius: 4px;
+  overflow: hidden;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.portfolio_body .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding-top: 400px;
+
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.portfolio_body:hover .overlay {
+  backdrop-filter: blur(5px);
+}
+.portfolio_body .overlay:hover {
+  padding-top: 150px;
+}
+.overlay h3 {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  color: #3d3e42;
+  padding-bottom: 16px;
+}
+.overlay a {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  color: #3d3e42;
+  padding: 8px 24px;
+  border-radius: 14px;
+  background-color: #ffc86b;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+}
+.overlay a i {
+  padding-left: 6px;
 }
 /* portfolio part end */
 
 /* experience part start  */
 #experience {
-  padding: 50px 0;
+  padding: 100px 0;
   background-color: #3d3e42;
 }
 .experience_haed h2 {
@@ -310,7 +387,7 @@ nav {
   font-weight: 600;
   font-family: "IBM Plex Serif", serif;
   color: #f9f9f9;
-  margin-top: -75px;
+
   padding-bottom: 36px;
 }
 .experience_body .experience_date {
@@ -464,14 +541,16 @@ nav {
 
 /* contact part start  */
 #contact {
-  padding: 50px 0;
+  padding: 100px 0;
   background-color: #3d3e42;
   position: relative;
+  border-top: 3px solid #efbf6e;
+  border-bottom: 3px solid #efbf6e;
 }
-.con_head {
+/* .con_head {
   position: relative;
-}
-.con_head::after {
+} */
+/* .con_head::after {
   position: absolute;
   content: "";
   height: 3px;
@@ -488,13 +567,13 @@ nav {
   background-color: #efbf6e;
   top: -53px;
   right: 0;
-}
+} */
 .con_head h2 {
   font-size: 36px;
   font-weight: 600;
   font-family: "IBM Plex Serif", serif;
   color: #f9f9f9;
-  margin-top: -78px;
+  padding-bottom: 36px;
 }
 .con_inner {
   padding: 16px 0;
@@ -516,7 +595,7 @@ nav {
   margin-right: 12px;
   color: #fff;
 }
-.con_bottom {
+/* .con_bottom {
   position: relative;
 }
 .con_bottom::after {
@@ -536,18 +615,12 @@ nav {
   background-color: #efbf6e;
   bottom: -53px;
   right: 0;
-}
+} */
 .con_bottom_icons {
-  position: absolute;
-  bottom: -58px;
-  left: 50%;
-  transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
+  padding-top: 40px;
 }
 .con_bottom_icons i {
+  font-size: 24px;
   color: #fff;
 }
 /* contact part end  */

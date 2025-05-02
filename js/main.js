@@ -1,4 +1,8 @@
+AOS.init();
+
+// back to top
 let back2top = document.querySelector(".backtotop");
+let nav = document.querySelector("nav");
 
 back2top.addEventListener("click", function () {
   window.scrollTo({
@@ -14,8 +18,14 @@ window.addEventListener("scroll", function () {
   } else {
     back2top.style.display = "none";
   }
+  if (scrolling > 30) {
+    nav.classList.add("navbg");
+  } else {
+    nav.classList.remove("navbg");
+  }
 });
 
+// typing
 let type = document.querySelectorAll(".type");
 let typeArray = Array.from(type);
 typeArray.map((item) => {
