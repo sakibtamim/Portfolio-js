@@ -1,5 +1,3 @@
-AOS.init();
-
 // back to top
 let back2top = document.querySelector(".backtotop");
 let nav = document.querySelector("nav");
